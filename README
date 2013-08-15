@@ -1,3 +1,5 @@
+COMMIT HASH: bdf1aee031e78313bc141ba57363457823f9acb1 
+
 This package implements a parser for configuration files.
 This allows easy reading and writing of structured configuration files.
 

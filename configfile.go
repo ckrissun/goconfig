@@ -507,6 +507,22 @@ func (c *ConfigFile) GetInt64(section string, option string) (int64, error) {
 	return value, nil
 }
 
+// GetUint has the same behaviour as GetString but converts the response to uint.
+func (c *ConfigFile) GetUint64(section string, option string) (uint64, error) {
+
+	sv, err := c.GetString(section, option)
+	if err != nil {
+		return 0, err
+	}
+
+	value, err := strconv.ParseUint(sv, 10, 64)
+	if err != nil {
+		return 0, err
+	}
+
+	return value, nil
+}
+
 // GetFloat has the same behaviour as GetString but converts the response to
 // float.
 func (c *ConfigFile) GetFloat(section string, option string) (float64, error) {
